@@ -1,0 +1,18 @@
+<div class="container">
+<h1>Список задач</h1>
+
+<ul *ngIf="taskService.taskList().length > 0; else noTasks">
+  <li *ngFor="let task of taskService.taskList()">
+    {{ task.title }} - {{ task.status }} - {{ task.status ? 'Сделано' : 'Не сделано' }}
+    <button (click)="viewDetails(task.id)">Подробнее</button>
+    <button (click)="deleteTask(task.id)">Удалить</button>
+  </li>
+</ul>
+
+<ng-template #noTasks>
+  <p>Список задач пуст.</p>
+</ng-template>
+  
+<button routerLink="/add-task">Добавить задачу</button>
+
+</div>

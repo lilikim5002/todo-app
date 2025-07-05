@@ -1,0 +1,34 @@
+button.active {
+  background-color: #4CAF50; /* Зеленый цвет для выбранной кнопки */
+  color: white;
+}
+
+div{
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+.button_fin{
+    margin-top: 40px;
+    
+}
+
+.button_fin button{
+    margin-right: 70px;
+}
+
+input[type="text"], textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 20%;
+  box-sizing: border-box;
+}
+
+/* Стили для полей ввода в фокусе */
+input[type="text"]:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

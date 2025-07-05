@@ -1,0 +1,30 @@
+<div class="container">
+<h2>Добавить задачу</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Название:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="newTask.title" required>
+  </div>
+
+  <div>
+    <label for="description">Описание:</label>
+    <textarea id="description" name="description" [(ngModel)]="newTask.description"></textarea>
+  </div>
+
+<div>
+    <label>Статус:</label>
+    <button type="button" (click)="newTask.status = true" [class.active]="newTask.status">
+      Сделано
+    </button>
+    <button type="button" (click)="newTask.status = false" [class.active]="!newTask.status">
+      Не сделано
+    </button>
+  </div>
+
+  <div class="button_fin">
+  <button type="submit">Добавить</button>
+  <button routerLink="/tasks">Отмена</button>
+  </div>
+</form> 
+</div>

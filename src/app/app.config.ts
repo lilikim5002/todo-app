@@ -1,8 +1,16 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, Routes } from '@angular/router';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskFormComponent } from './task-form/task-form.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
 
-import { routes } from './app.routes';
+const routes: Routes = [
+  { path: 'tasks', component: TaskListComponent },
+  { path: 'add-task', component: TaskFormComponent },
+  { path: 'tasks/:id', component: TaskDetailComponent },
+  { path: '', redirectTo: '/tasks', pathMatch: 'full' }
+];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+  providers: [provideRouter(routes)]
 };

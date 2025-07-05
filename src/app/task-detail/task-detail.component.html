@@ -1,0 +1,11 @@
+<div *ngIf="task; else notFound">
+  <h2>Детали задачи</h2>
+  <h3>{{ task.title }}</h3>
+  <p>{{ task.description }}</p>
+  <p>Статус: {{ task.status }}</p>
+  <button routerLink="/tasks">Назад</button>
+</div>
+
+<ng-template #notFound>
+  <p>Задача не найдена.</p>
+</ng-template>
